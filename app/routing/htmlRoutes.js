@@ -8,5 +8,14 @@ app.get("/add", function(req, res) {
 
 
 
+
+  //get matches page
+  $.get("/api/characters/" + searchedCharacter, function(data) {
+    console.log(data);
+
+  });
+
+
+
 //* A default, catch-all route that leads to `home.html` which displays the home page. 
 
