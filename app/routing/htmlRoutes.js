@@ -1,21 +1,19 @@
-//Your `htmlRoutes.js` file should include two routes:
+//routes catches user send them to home
+var path = require("path");
+module.exports = function(app){
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/home.html"));
+});
 
-//* A GET Route to `/survey` which should display the survey page.
-app.get("/add", function(req, res) {
-    res.sendFile(path.join(__dirname, "add.html"));
-  });
+app.get("/survey", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/survey.html"));
+});
 
+app.get("/matches", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/matches.html"));
+});
 
-
-
-
-  //get matches page
-  $.get("/api/characters/" + searchedCharacter, function(data) {
-    console.log(data);
-
-  });
-
-
-
-//* A default, catch-all route that leads to `home.html` which displays the home page. 
-
+app.get("/friends", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/friends.html"));
+});
+}

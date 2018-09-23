@@ -34,24 +34,14 @@
         </div>
       </nav>
 
-      <div class="jumbotron">
-          <h1 class="display-4">FriendFinder </h1>
-          <p class="lead">Connecting people all cohort long then, the world.</p>
-          </div>
-      
-          <a href="/survey"><button type="button" class="btn btn-primary survey">Survey</button> </a>
 
-            <a href="/friends"><button type="button" class="btn btn-primary everyone">All Users</button> </a>
+<script>
+      $.get("/api/surveyData/", function(data) {
+        //code goes here
+        var mostRecentUser = data[data.length-1]
+        console.log(mostRecentUser)
+        });
+    </script>
 
-              <a href="/matches"><button type="button" class="btn btn-primary matches">Friends</button> </a>
-      
-
-
-
-</body>
-
-
-
-
-
-</html>
+      </body>
+      </html>
