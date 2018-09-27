@@ -310,7 +310,7 @@
   </form>
 
   <br>
-  <button class="btn btn-success submit">Find Me Friends</button>
+  <button class="btn btn-success submit"data-toggle="modal" data-target="#exampleModal">Find Me Friends</button>
   </div>
   <!-- card -->
   </div>
@@ -324,6 +324,25 @@
 
 </body>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Best Friend is :</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">  
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 
@@ -351,37 +370,41 @@
       alert("Please Fill In All Fields");
     } else {
       $.get("/api/data/friends")
-      .then((results) =>{
+        .then((results) => {
 
-      let bestMatch = {};
-      let currentBestDifferences = 999
+          let bestMatch = {};
+          let currentBestDifferences = 999
 
-      results.forEach(function(friend){
-        let totalDifferences = 0
-
-
-        newfriend.scores.forEach((awnser, i) =>{
-
-          let differ= Math.abs(awnser-friend.scores[i]);
-          totalDifferences = differ + totalDifferences; 
+          results.forEach(function (friend) {
+            let totalDifferences = 0
 
 
+            newfriend.scores.forEach((awnser, i) => {
+
+              let differ = Math.abs(awnser - friend.scores[i]);
+              totalDifferences = differ + totalDifferences;
+
+
+            })
+            if (totalDifferences < currentBestDifferences) {
+              bestMatch = friend;
+              currentBestDifferences = totalDifferences;
+            }
+
+          })
+          $(".modal-header").html("")
+          $(".modal-header").append(bestMatch.name)
+          $(".modal-body").html("")
+          var imageTag = $("<img>")
+          $(imageTag).attr( 'src', bestMatch.photo)
+          $(imageTag).attr( ".img-fluid")
+          $(".modal-body").append(imageTag)
+          // bestMatch.name, bestMatch.photo
         })
-        if (totalDifferences < currentBestDifferences){
-          bestMatch = friend;
-          currentBestDifferences = totalDifferences;
-        }
 
-      })
-      
-        return
-
-        bestMatch.name, bestMatch.photo
-      })
-
-       $.post("/api/friends", newfriend)
-         .then(function (data) {
-         })
+      $.post("/api/friends", newfriend)
+        .then(function (data) {
+        })
 
     };
 

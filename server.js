@@ -32,23 +32,7 @@ var surveyData = [
         1
     ]
   },
-  {
- 
-    name: "Hector",
-    photo: "https://i.kinja-img.com/gawker-media/image/upload/s--PUQWGzrn--/c_scale,f_auto,fl_progressive,q_80,w_800/yktaqmkm7ninzswgkirs.jpg",
-    scores: [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-    ]
-  },
+
   {
  
     name: "Joker",
