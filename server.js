@@ -17,38 +17,56 @@ app.use(bodyParser.json());
 var surveyData = [
   {
  
-    name: "dude",
-    photo: "http://husbanddaddude.com/wp-content/uploads/2015/10/Dude.jpg",
+    name: "Batman",
+    photo: "https://i.kinja-img.com/gawker-media/image/upload/s--PUQWGzrn--/c_scale,f_auto,fl_progressive,q_80,w_800/yktaqmkm7ninzswgkirs.jpg",
     scores: [
-        2,
-        2,
         5,
-        3,
         1,
         5,
-        3,
-        2,
-        4,
-        6
+        5,
+        1,
+        5,
+        1,
+        5,
+        1,
+        1
     ]
   },
   {
  
-    name: "Darth Maul",
-    photo: "https://vignette.wikia.nocookie.net/starwars/images/5/50/Darth_Maul_profile.png/revision/latest?cb=20140209162228",
+    name: "Hector",
+    photo: "https://i.kinja-img.com/gawker-media/image/upload/s--PUQWGzrn--/c_scale,f_auto,fl_progressive,q_80,w_800/yktaqmkm7ninzswgkirs.jpg",
     scores: [
-        2,
-        2,
-        5,
-        3,
         1,
-        9,
-        3,
-        5,
-        4,
-        6
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
     ]
   },
+  {
+ 
+    name: "Joker",
+    photo: "https://upload.wikimedia.org/wikipedia/en/9/98/Joker_%28DC_Comics_character%29.jpg",
+    scores: [
+        1,
+        5,
+        1,
+        1,
+        5,
+        1,
+        5,
+        1,
+        1,
+        5
+    ]
+  },
+
  ];
 
 

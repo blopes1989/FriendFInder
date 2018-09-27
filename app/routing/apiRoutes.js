@@ -1,19 +1,17 @@
 
-module.exports = function (app, surveyData){
+module.exports = function (app, surveyData) {
 
-app.post("/api/friends", function(req, res) {
-    // req.body hosts is equal to the JSON post sent from the user
-    // This works because of our body-parser middleware
+  app.post("/api/friends", function (req, res) {
     var addedFriend = req.body;
     surveyData.push(addedFriend);
-  
-    res.json(addedFriend);
+
+    return res.json(surveyData);
+
   });
 
-  app.get("/api/surveyData", function(req, res) {
+  app.get("/api/data/friends", function (req, res) {
     return res.json(surveyData);
-   });
 
-}
+  });
 
-
+};
